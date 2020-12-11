@@ -1,0 +1,73 @@
+.order {
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.orders__mainDet>* {
+    margin-right: 10px;
+}
+
+.icon_holder>* {
+    margin: 0 5px;
+}
+
+.myAccList li {
+    padding: 15px;
+}
+
+.pi i {
+    padding-left: 5px;
+}
+
+.fit-footer {
+    padding: 0 10px;
+}
+
+.address {
+    margin-right: 10px;
+}
+
+@media only screen and (max-width:650px) {
+    .address {
+        white-space: pre-line;
+    }
+}
+
+.product>* {
+    margin-right: 10px
+}
+
+.product {
+    padding: 10px;
+    position: relative;
+}
+
+.product img {
+    width: 25vw;
+    max-width: 300px;
+}
+
+.eti {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.card__body>* {
+    margin-bottom: 4px;
+}
+
+/* .icon_holder {
+    position: absolute;
+    top: 0;
+    right: 0;
+} */
+
+.product__details>* {
+    padding: 10px;
+}
+
+@media only screen and (max-width:400px) {
+    .myAccList li {
+        padding: 7px 15px;
+    }
+}

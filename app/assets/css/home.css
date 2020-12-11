@@ -1,0 +1,126 @@
+.navBar {
+    position: absolute;
+}
+
+.main {
+    background-image: linear-gradient(204deg, #667eeaee 0%, #764ba266 100%);
+    /* background-image: linear-gradient(to top, #dad4ec66 0%, #dad4ec66 1%, #f3e7e966 100%); */
+    color: var(--silver);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.main :after {
+    content: '';
+    position: absolute;
+    background: url('../images/gallery/wide-1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    right: 0;
+}
+
+#presentation .navBar {
+    background-image: none;
+}
+
+.hero {
+    height: 400px;
+    overflow: hidden;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+.hero__title {
+    font-size: 130px;
+    /* letter-spacing: 8px; */
+    padding: 10px 0;
+    font-family: 'Great Vibes', cursive;
+}
+
+.gallery__col-left {
+    width: 65%;
+    justify-content: space-between;
+}
+
+.gallery__col-right {
+    width: 33%;
+}
+
+.col>div:not(:last-of-type) {
+    margin-bottom: 5px;
+}
+
+.gallery img {
+    width: 100%;
+    transition: transform 500ms, filter 350ms;
+    display: block;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+.gallery {
+    padding: 30px 0;
+}
+
+.gallery>div {
+    margin: 0 auto;
+}
+
+.gallery__col-left div, .gallery__col-right div {
+    overflow: hidden;
+    margin-bottom: 7px;
+}
+
+.gallery__col-left div:hover img, .gallery__col-right div:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+}
+
+.contact-info>p {
+    margin-bottom: 11px;
+}
+
+.contact-info i {
+    margin-right: 5px;
+}
+
+@media only screen and (max-width:986px) {
+    .col {
+        width: 100%;
+    }
+    .col>div:not(:last-of-type) {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 792px) {
+    #menu {
+        top: -22px;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        border-radius: 0;
+        background-image: linear-gradient(204deg, #667eeaee 0%, #764ba266 100%);
+    }
+    #menu li {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width:496px) {
+    .hero {
+        font-size: 25px;
+    }
+    .hero__title {
+        font-size: 80px;
+    }
+}

@@ -1,0 +1,170 @@
+.product__name {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin: 5px 0;
+    /* left: 0; */
+}
+
+.product__name span:first-of-type {
+    padding-right: 6px;
+}
+
+.product__price {
+    font-size: 1.2rem;
+    color: var(--gray-black);
+}
+
+.product__price--old {
+    text-decoration: line-through;
+    color: var(--disabled);
+}
+
+.delRev {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.product__price>* {
+    margin-right: 5%;
+}
+
+.product__details {
+    padding: 3%;
+}
+
+.product__img {
+    max-width: 600px;
+    width: 100%;
+}
+
+.product__stars {
+    font-size: 1.5rem;
+}
+
+.product__dimensions {
+    font-weight: bold;
+}
+
+.product__description {
+    font-style: italic;
+    padding: 1%;
+    white-space: pre-line;
+}
+
+.product__details>* {
+    margin-top: 5px;
+}
+
+label[for=reviewContent] {
+    font-weight: bold;
+    margin: 10px 0;
+    color: var(--primary);
+    display: block;
+}
+
+.reviews {
+    padding: 20px 0;
+}
+
+.review {
+    border: 2px solid var(--secondary);
+    /* background-color: #eee; */
+    border-radius: 0 21px;
+    padding: 20px;
+    margin: 16px 0;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.review img {
+    margin-right: 20px;
+    border-radius: 50%;
+    max-width: 100px;
+    border: 2px solid var(--secondary);
+}
+
+.review__content>* {
+    margin-bottom: 15px;
+}
+
+.review__content {
+    text-align: justify;
+}
+
+.review__text {
+    white-space: pre-line;
+}
+
+.fa-star {
+    color: var(--secondary);
+}
+
+.stars {
+    border: none;
+    display: inline-block;
+    direction: rtl;
+}
+
+.stars input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    /* z-index: 10; */
+}
+
+.star {
+    position: relative;
+    display: inline-block;
+    /* height: 15px; */
+    margin: 10px 0;
+    width: 20px;
+}
+
+.stars_time {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stars_time div {
+    margin-right: 10px;
+    ;
+}
+
+.star::before {
+    content: '\2606';
+    position: absolute;
+    color: var(--secondary);
+    top: -17px;
+    left: 0;
+    font-size: 2rem;
+}
+
+.stars input:checked~label::before, .stars label:hover::before, .stars label:hover~label::before {
+    /* font-weight: 900; */
+    content: '\2605';
+}
+
+.stars i {
+    font-size: 1.4rem;
+}
+
+.stars input:checked~label i, .stars label:hover i, .stars label:hover~label i {
+    font-weight: 900
+}
+
+.qtyInput label {
+    display: block;
+}
+
+@media (max-width: 620px) {
+    .review img {
+        /* margin: auto; */
+        display: none;
+    }
+    /* .review {
+        flex-wrap: wrap;
+    } */
+}
