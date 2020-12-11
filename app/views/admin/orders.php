@@ -1,34 +1,25 @@
 <?php
 
-function displayOrders($orders,$util)
+function displayOrders($orders, $util)
 {
 
-    $statuses = array("Pending", "Complete");
-    if (!mysql_num_rows($orders)) {
-        echo " <p class='ta-c c-prm bold'>There are no orders here yet</p>";
-        return;
-    }
-    while ($row = mysql_fetch_array($orders)) {
-        $address = $util->buildAddressString($row);
-        // print_r($row);
-        // echo '<br>';
-        // echo $row['OrderStatus'];
-        $orderID = $row['OrderID'];
-        $icon="check";
-        $orderStatus= $row['OrderStatus'];
-        if($orderStatus){
-            $icon = "times";
-        }
-        $status = $statuses[$orderStatus];
-        // if($row['Status']){
-        //     $status="Complete";
-        // }
+  $statuses = array("Pending", "Complete");
+  if (!mysql_num_rows($orders)) {
+    echo " <p class='ta-c c-prm bold'>There are no orders here yet</p>";
+    return;
+  }
+  while ($row = mysql_fetch_array($orders)) {
+    $address = $util->buildAddressString($row);
 
-        // $arrival = "Unknown";
-        // if ($row['ArrivalDate']) {
-        //     $arrival = $row['ArrivalDate'];
-        // }
-        echo "
+    $orderID = $row['OrderID'];
+    $icon = "check";
+    $orderStatus = $row['OrderStatus'];
+    if ($orderStatus) {
+      $icon = "times";
+    }
+    $status = $statuses[$orderStatus];
+
+    echo "
 
         <div class='card mb-1'>
             <div class='card__header centeredRow space-between'>
@@ -38,7 +29,7 @@ function displayOrders($orders,$util)
                    
                 </p>
                 <div>
-                    <a class='btn btn-primary btn--xsmall d-ib' href='./?url=admin/updateOrder/$orderID/".!$orderStatus."'>
+                    <a class='btn btn-primary btn--xsmall d-ib' href='./?url=admin/updateOrder/$orderID/" . !$orderStatus . "'>
                         <i class='fas fa-$icon'></i>
                     </a>
                     <a class='btn btn-primary btn--xsmall d-ib' href='./?url=user/orders/$orderID'>
@@ -51,15 +42,13 @@ function displayOrders($orders,$util)
               
                 <p class='card-text'><span class='eti'>Shipping address:</span> $address</p>
                 <p><span class='eti'>Order Creation Time:</span> <time>${row['OrderDate']}</time> </p>
-                
-              
             </div>
         </div>";
-    }
+  }
 }
 
 if (isset($data['orders']) && $orders = $data['orders']) {
-    displayOrders($orders, $viewUtil);
+  displayOrders($orders, $viewUtil);
 } else {
-    echo $viewUtil->displayOrderDetails($data['orderDetails']);
+  echo $viewUtil->displayOrderDetails($data['orderDetails']);
 }
